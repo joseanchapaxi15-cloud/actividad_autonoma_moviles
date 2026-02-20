@@ -7,8 +7,8 @@ import { KeyboardTypeOptions, TextInput } from 'react-native';
 interface Props {
     placeholder: string;
     keyboardType: KeyboardTypeOptions;
-    handleChangeValue:(name:Number , value:Number)=> void;
-    name:Number;
+    handleChangeValue:(name:string , value:string)=> void;
+    name:string;
 }
 
 export const ImputComponent = ({ placeholder, keyboardType , handleChangeValue,name }: Props) => {
