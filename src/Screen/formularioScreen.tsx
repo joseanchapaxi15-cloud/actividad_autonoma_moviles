@@ -50,7 +50,7 @@ export const FormularioScreen = () => {
                 <Text>Realiza tu diviciones en esta tu App</Text>
                 <View>
                     <ImputComponent placeholder='numero 1' keyboardType='numeric' name="num1"
-                        handleChangeValue={handleChangeValue} />
+                        handleChangeValue={handleChangeValue  } />
                     <ImputComponent placeholder='numero 2' keyboardType='numeric' name="num2"
                         handleChangeValue={handleChangeValue} />
                 </View>
