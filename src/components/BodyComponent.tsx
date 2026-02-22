@@ -3,18 +3,19 @@ import { Text, useWindowDimensions, View } from 'react-native';
 import { stylesGlobal } from '../themes/appThemes';
 
 
-interface Props{
-  children: ReactNode;
+interface Props {
+    children: ReactNode;
 }
 
-export const BodyComponent = ({children}:Props) => {
-  const { height } = useWindowDimensions() ;
-  return (
-    <View style={{...stylesGlobal.containerBody,
-      height: height*0.85
-    
-    }}>
-        {children}
+export const BodyComponent = ({ children }: Props) => {
+    const { height } = useWindowDimensions();
+    return (
+        <View style={{
+            ...stylesGlobal.containerBody,
+            height: height * 0.85
+
+        }}>
+            {children}
         </View>
-  )
+    )
 }

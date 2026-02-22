@@ -1,62 +1,93 @@
 import { StyleSheet } from "react-native";
 
+// Definimos una paleta de colores constante para no repetir
+const COLORES = {
+    primario: '#2ecc71',    // Un verde más elegante
+    secundario: '#3498db',  // Un azul más moderno
+    oscuro: '#2c3e50',
+    blanco: '#ffffff',
+    grisSuave: '#f5f6fa'
+};
+
 export const stylesGlobal = StyleSheet.create({
     title: {
-        color: "white",
-        fontSize: 25,
-        fontWeight: 'bold',
+        color: COLORES.blanco,
+        fontSize: 30,           // Un poco más grande
+        fontWeight: '800',      // Más impacto
         paddingHorizontal: 30,
-        paddingTop: 70
+        paddingTop: 60,
+        letterSpacing: 1.5,     // Espaciado entre letras pro
+        textTransform: 'uppercase'
     },
     containerBody: {
-        backgroundColor: 'white',
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
+        backgroundColor: COLORES.grisSuave, // Color crema suave en lugar de blanco puro
+        borderTopLeftRadius: 40,            // Curvas más pronunciadas
+        borderTopRightRadius: 40,
         paddingHorizontal: 30,
-        paddingTop: 40
+        paddingTop: 40,
+        // Sombra para dar profundidad
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: -10 },
+        shadowOpacity: 0.1,
+        shadowRadius: 10,
+        elevation: 10,
     },
     input: {
-        backgroundColor: 'green',
+        backgroundColor: COLORES.blanco, // Fondo blanco para los inputs
         paddingHorizontal: 20,
-        borderRadius: 8,
-        marginVertical: 7
-
+        paddingVertical: 12,            // Más altura para comodidad
+        borderRadius: 12,
+        marginVertical: 10,
+        fontSize: 16,
+        color: COLORES.oscuro,
+        // Borde sutil en lugar de color sólido
+        borderWidth: 1,
+        borderColor: '#dcdde1',
     },
     containerImput: {
         marginVertical: 15
     },
     titleWelcome: {
-        fontSize: 17,
-        fontWeight: 'bold'
+        fontSize: 22,
+        fontWeight: 'bold',
+        color: COLORES.oscuro,
+        marginBottom: 10
     },
-
     button: {
-        backgroundColor: 'blue',
-        paddingVertical: 15,
-        borderRadius: 10
+        backgroundColor: COLORES.secundario,
+        paddingVertical: 16,
+        borderRadius: 15,
+        marginVertical: 20,
+        // Sombra de botón
+        shadowColor: COLORES.secundario,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 5,
+        elevation: 5,
     },
     buttonTex: {
         textAlign: 'center',
-        color: 'white',
-        fontSize: 15,
-        fontWeight: 'bold'
+        color: COLORES.blanco,
+        fontSize: 17,
+        fontWeight: 'bold',
+        letterSpacing: 1
     },
-
-
     logoContainer: {
-        alignItems: 'center',      // Centra horizontalmente
-        justifyContent: 'center',  // Centra verticalmente (si el contenedor tiene altura)
-        width: '100%',             // Ocupa todo el ancho para que el centro sea el real
-        marginBottom: 30,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        marginVertical: 30,
     },
     logo: {
-        width: 180,
-        height: 180,
-        borderRadius: 90,
-        borderWidth: 3,
-        borderColor: 'white',      // No olvides un color para que el borde se vea
+        width: 150,
+        height: 150,
+        borderRadius: 75,
+        borderWidth: 4,
+        borderColor: COLORES.blanco,
+        // Sombra para el logo
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 5 },
+        shadowOpacity: 0.3,
+        shadowRadius: 8,
     }
-
-
-
-})
+});

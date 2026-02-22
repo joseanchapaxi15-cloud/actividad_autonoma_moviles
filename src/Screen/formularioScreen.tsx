@@ -22,18 +22,17 @@ export const FormularioScreen = () => {
     //funcion para capturar los valores de mi formulario 
     const handleChangeValue = (name: string, value: string): void => {
         console.log(name, " ", value, "  ");
-        setValores({
-            ...valores,    // Mantiene el valor del campo que no se está tocando
+        setValores({...valores,// Mantiene el valor del campo que no se está tocando
             [name]: value  // Actualiza el campo actual (num1 o num2)
         });
 
     }
-    // 4. Esta función calcula y envía la respuesta final a la CONSOLA
+    // función calcula y envía la respuesta final a la CONSOLA
     const handleCalcularConsola = () => {
         const n1 = parseFloat(valores.num1);
         const n2 = parseFloat(valores.num2);
 
-        // Validaciones según tu actividad autónoma
+        // proseso para la divicion 
         if (n1 === 0 && n2 === 0) {
             console.log("RESULTADO: INDETERMINACIÓN");
         } else if (n2 === 0) {
@@ -55,7 +54,7 @@ export const FormularioScreen = () => {
                     <ImputComponent placeholder='numero 2' keyboardType='numeric' name="num2"
                         handleChangeValue={handleChangeValue} />
                 </View>
-                <ButtonComponent buttonText='Calcular' onPress={handleCalcularConsola}
+                <ButtonComponent buttonText='CALCULAR' onPress={handleCalcularConsola}
                 />
             </BodyComponent>
         </View>
