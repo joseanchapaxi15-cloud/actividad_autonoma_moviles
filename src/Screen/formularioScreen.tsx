@@ -5,34 +5,36 @@ import { TitleComponent } from '../components/TitleComponent';
 import { BodyComponent } from '../components/BodyComponent';
 import { ButtonComponent } from '../components/ButtonComponent';
 import { ImputComponent } from '../components/ImputComplement';
+import { CommonActions, useNavigation } from '@react-navigation/native';
 
-//interface defina laestructura de lobjeto indicado
+
 interface Formlario {
     num1: string;
     num2: string;
 }
 
 export const FormularioScreen = () => {
+    const navigation = useNavigation();
     const [valores, setValores] = React.useState({
         num1: '',
         num2: '',
     });
 
 
-    //funcion para capturar los valores de mi formulario 
+    
     const handleChangeValue = (name: string, value: string): void => {
         console.log(name, " ", value, "  ");
-        setValores({...valores,// Mantiene el valor del campo que no se está tocando
-            [name]: value  // Actualiza el campo actual (num1 o num2)
+        setValores({...valores,
+            [name]: value  
         });
 
     }
-    // función calcula y envía la respuesta final a la CONSOLA
+    
     const handleCalcularConsola = () => {
         const n1 = parseFloat(valores.num1);
         const n2 = parseFloat(valores.num2);
 
-        // proseso para la divicion 
+        
         if (n1 === 0 && n2 === 0) {
             console.log("RESULTADO: INDETERMINACIÓN");
         } else if (n2 === 0) {
@@ -55,6 +57,8 @@ export const FormularioScreen = () => {
                         handleChangeValue={handleChangeValue} />
                 </View>
                 <ButtonComponent buttonText='CALCULAR' onPress={handleCalcularConsola}
+                />
+                <ButtonComponent buttonText='IR A INICIO' onPress={()=>navigation.dispatch(CommonActions.navigate({name:'Bienvenido'}))}
                 />
             </BodyComponent>
         </View>

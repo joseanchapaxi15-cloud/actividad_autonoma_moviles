@@ -4,12 +4,12 @@ import { TitleComponent } from '../components/TitleComponent';
 import { BodyComponent } from '../components/BodyComponent';
 import { stylesGlobal } from '../themes/appThemes';
 import { ButtonComponent } from '../components/ButtonComponent';
-import { useNavigation } from '@react-navigation/native';
+import { CommonActions, useNavigation } from '@react-navigation/native';
 
 
 
 export const BienvenidoScrenn = () => {
-    const navigation = useNavigation<any>();
+     const navigation = useNavigation();
     return (
         <View >
             <View>
@@ -24,7 +24,7 @@ export const BienvenidoScrenn = () => {
                 <Text style={stylesGlobal.titleWelcome} >Bienvenido a la App de Jose Luis!</Text>
                 <Text>Realiza tu diviciones en esta tu App</Text>
                 <ButtonComponent buttonText='Acceder'
-                    onPress={() => navigation.navigate('Formulario')}
+                    onPress={() => navigation.dispatch(CommonActions.navigate({name:'Formulario'}))}
                 />
             </BodyComponent>
         </View>

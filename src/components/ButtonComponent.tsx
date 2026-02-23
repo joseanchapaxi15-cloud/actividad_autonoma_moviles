@@ -6,7 +6,7 @@ import { stylesGlobal } from '../themes/appThemes';
 
 interface Porps {
     buttonText: string;
-    onPress?: () => void;
+    onPress: () => void;
 }
 
 export const ButtonComponent = ({ buttonText , onPress }: Porps) => {
