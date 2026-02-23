@@ -40,8 +40,8 @@ export const FormularioScreen = () => {
         } else if (n2 === 0) {
             console.log("RESULTADO: NO EXISTE DIVISIÓN PARA CERO");
         } else {
-            const res = n1 / n2;
-            console.log(`RESULTADO DE LA DIVISIÓN: ${res}`);
+            const resultado = n1 / n2;
+            console.log(`RESULTADO DE LA DIVISIÓN: ${resultado}`);
         }
     }
     return (
